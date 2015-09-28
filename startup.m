@@ -67,9 +67,9 @@ disp('DONE')
 
 
 % fix stupid figure sizes
-set(0, 'DefaultFigurePosition', [50 100 1300 700]);
+set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
 
-% start the parallel pool
-parpool('local',4);
+% % start the parallel pool
+% parpool('local',4);
 
 disp('All DONE!')

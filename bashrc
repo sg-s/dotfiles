@@ -1,10 +1,15 @@
 # add this to your ~/.bashrc or ~/.bash_profile:
 # case $- in
-#    *i*) source ~/code/config-files/.bashrc
+#    *i*) source ~/code/config-files/.bashrc # fix this path to point to where this file is
 # esac
 
  # export TERM="xterm-color"
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
+
+# improve history
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000000
+
 
 ########     ###    ######## ##     ##  ######  
 ##     ##   ## ##      ##    ##     ## ##    ## 
@@ -63,6 +68,21 @@ bind '"\eOB": history-search-forward'
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
+# Added by termtile (https://github.com/apaszke/termtile)
+alias ur='osascript /code/termtile//tile.scpt up right'
+alias dl='osascript /code/termtile//tile.scpt down left'
+alias dr='osascript /code/termtile//tile.scpt down right'
+alias ll='osascript /code/termtile//tile.scpt left'
+alias rr='osascript /code/termtile//tile.scpt right'
+alias up='osascript /code/termtile//tile.scpt up'
+alias down='osascript /code/termtile//tile.scpt down'
+alias big='osascript /code/termtile//resize.scpt '
+alias cen='osascript /code/termtile//center.scpt '
+alias max='osascript /code/termtile//maximize.scpt '
+alias sn='osascript /code/termtile//changeScreen.scpt next'
+alias fs='osascript /code/termtile//fullscreen.scpt '
+
+
 
 
 ##    ##  #######  ########  ######## 
@@ -94,7 +114,7 @@ is_subdirectory() {
 # Activates a new environment
 activate_env() {
     # Check if the directory we've cd'ed into is a node environment directory
-    # (i.e., it contains a node_modules folder) and that a node envrionment
+    # (i.e., it contains a node_modules folder) and that a node environment
     # does not already exist before creating a new one.
     if [ -d "node_modules" ] && [ -z "$_ENV_DIR" ]; then
 
@@ -119,8 +139,8 @@ activate_env() {
 
 # Deactivates the current envrionment
 deactivate_env() {
-    # Make sure that an envrionment does exist and that the new
-    # directory is not a subdirectory of the envrionment directory
+    # Make sure that an environment does exist and that the new
+    # directory is not a subdirectory of the environment directory
     if [ -n "$_ENV_DIR" ] && ! is_subdirectory "$PWD" "$_ENV_DIR"; then
 
         # Run the deactivation script if it exists
