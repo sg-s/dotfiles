@@ -8,6 +8,30 @@
 #
 # Tweak the following things as needed. 
 
+########     ###    ######## ##     ##  ######  
+##     ##   ## ##      ##    ##     ## ##    ## 
+##     ##  ##   ##     ##    ##     ## ##       
+########  ##     ##    ##    #########  ######  
+##        #########    ##    ##     ##       ## 
+##        ##     ##    ##    ##     ## ##    ## 
+##        ##     ##    ##    ##     ##  ######  
+
+# 3rd party apps
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/:$PATH" # sublime
+export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  # matlab
+export PATH="/code/auto-bots:$PATH"             # my bash scripts
+
+source /code/oh-my-git/prompt.sh    # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
+
+# go
+export GOPATH='/usr/local/go/bin'
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/usr/local/go/bin/bin
+
+# source /usr/local/etc/bash_completion.d/password-store
+
+
 ######## ######## ########  ##     ## #### ##    ##    ###    ##       
    ##    ##       ##     ## ###   ###  ##  ###   ##   ## ##   ##       
    ##    ##       ##     ## #### ####  ##  ####  ##  ##   ##  ##       
@@ -43,28 +67,6 @@ alias ls='ls -G'
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-########     ###    ######## ##     ##  ######  
-##     ##   ## ##      ##    ##     ## ##    ## 
-##     ##  ##   ##     ##    ##     ## ##       
-########  ##     ##    ##    #########  ######  
-##        #########    ##    ##     ##       ## 
-##        ##     ##    ##    ##     ## ##    ## 
-##        ##     ##    ##    ##     ##  ######  
-
-# 3rd party apps
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/:$PATH" # sublime
-export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  # matlab
-export PATH="/code/auto-bots:$PATH"             # my bash scripts
-
-source /code/oh-my-git/prompt.sh    # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
-
-# go
-export GOPATH='/usr/local/go/bin'
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:/usr/local/go/bin/bin
-
-# source /usr/local/etc/bash_completion.d/password-store
 
 
 
