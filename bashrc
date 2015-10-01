@@ -1,15 +1,47 @@
+# This is your bashrc file (i.e., the config file for your bash Shell)
+# This should be loaded by bash when it starts up. To get it to do so, do this:
+# 
 # add this to your ~/.bashrc or ~/.bash_profile:
 # case $- in
 #    *i*) source ~/code/config-files/.bashrc # fix this path to point to where this file is
 # esac
+#
+# Tweak the following things as needed. 
 
- # export TERM="xterm-color"
+######## ######## ########  ##     ## #### ##    ##    ###    ##       
+   ##    ##       ##     ## ###   ###  ##  ###   ##   ## ##   ##       
+   ##    ##       ##     ## #### ####  ##  ####  ##  ##   ##  ##       
+   ##    ######   ########  ## ### ##  ##  ## ## ## ##     ## ##       
+   ##    ##       ##   ##   ##     ##  ##  ##  #### ######### ##       
+   ##    ##       ##    ##  ##     ##  ##  ##   ### ##     ## ##       
+   ##    ######## ##     ## ##     ## #### ##    ## ##     ## ######## 
+
+ ######   #######  ##    ## ######## ####  ######   
+##    ## ##     ## ###   ## ##        ##  ##    ##  
+##       ##     ## ####  ## ##        ##  ##        
+##       ##     ## ## ## ## ######    ##  ##   #### 
+##       ##     ## ##  #### ##        ##  ##    ##  
+##    ## ##     ## ##   ### ##        ##  ##    ##  
+ ######   #######  ##    ## ##       ####  ######   
+
+
+# make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
 
 # improve history
 export HISTCONTROL=ignoreboth
-export HISTSIZE=1000000
+export HISTSIZE=100000   # remember more things in history 
 
+# show the computer name in a cool font (using figlet)
+computer-name
+
+# stupid fortune
+fortune 
+
+# color folders in ls 
+alias ls='ls -G'
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 ########     ###    ######## ##     ##  ######  
 ##     ##   ## ##      ##    ##     ## ##    ## 
@@ -19,33 +51,21 @@ export HISTSIZE=1000000
 ##        ##     ##    ##    ##     ## ##    ## 
 ##        ##     ##    ##    ##     ##  ######  
 
+# 3rd party apps
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/:$PATH" # sublime
+export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  # matlab
+export PATH="/code/auto-bots:$PATH"             # my bash scripts
 
-export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"
+source /code/oh-my-git/prompt.sh    # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
+
+# go
 export GOPATH='/usr/local/go/bin'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="/usr/local/sbin:/code/auto-bots:/code/uflix:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:/usr/local/go/bin/bin
 
-source /usr/local/etc/bash_completion.d/password-store
-source /usr/local/etc/bash_completion.d/password-store
-source /code/oh-my-git/prompt.sh
+# source /usr/local/etc/bash_completion.d/password-store
 
-
- ######   #######   ######  ##     ## ######## ######## ####  ######   ######  
-##    ## ##     ## ##    ## ###   ### ##          ##     ##  ##    ## ##    ## 
-##       ##     ## ##       #### #### ##          ##     ##  ##       ##       
-##       ##     ##  ######  ## ### ## ######      ##     ##  ##        ######  
-##       ##     ##       ## ##     ## ##          ##     ##  ##             ## 
-##    ## ##     ## ##    ## ##     ## ##          ##     ##  ##    ## ##    ## 
- ######   #######   ######  ##     ## ########    ##    ####  ######   ######  
-
-
-# show the computer name in a cool font
-computer-name
-
-# stupid fortune
-fortune 
 
 
  ######  ##     ##  #######  ########  ########  ######  ##     ## ########  ######  
