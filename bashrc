@@ -6,7 +6,11 @@
 #    *i*) source ~/code/config-files/.bashrc # fix this path to point to where this file is
 # esac
 #
-# Tweak the following things as needed. 
+# Tweak the following things as needed. Warning: rearranging the order of things may break things
+
+# make a better prompt, colours, etc. 
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
+
 
 ########     ###    ######## ##     ##  ######  
 ##     ##   ## ##      ##    ##     ## ##    ## 
@@ -17,11 +21,21 @@
 ##        ##     ##    ##    ##     ##  ######  
 
 # 3rd party apps
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/:$PATH" # sublime
-export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  # matlab
-export PATH="/code/auto-bots:$PATH"             # my bash scripts
 
-source /code/oh-my-git/prompt.sh    # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
+# homebrew
+export PATH="/usr/local/sbin:$PATH" 
+
+# sublime text (i.e., the subl command)
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH" 
+
+# matlab (to run headless in the command prompt)
+export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  
+
+# https://github.com/sg-s/auto-bots
+export PATH="/code/auto-bots:$PATH"            
+
+# awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
+source /code/oh-my-git/prompt.sh    
 
 # go
 export GOPATH='/usr/local/go/bin'
@@ -48,13 +62,12 @@ export PATH=$PATH:/usr/local/go/bin/bin
 ##    ## ##     ## ##   ### ##        ##  ##    ##  
  ######   #######  ##    ## ##       ####  ######   
 
-
-# make a better prompt, colours, etc. 
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
+# better auto complete
+bind "set completion-ignore-case on"
 
 # improve history
-export HISTCONTROL=ignoreboth
-export HISTSIZE=100000   # remember more things in history 
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=10000   # remember more things in history 
 
 # show the computer name in a cool font (using figlet)
 computer-name
