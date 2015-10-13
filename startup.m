@@ -6,21 +6,23 @@
 % To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
 % configure a email agent 
-disp('Configuring email account for Matlab Crash Reporter...')
-setpref('Internet', 'E_mail', 'matlabcrashreporter@gmail.com');
-setpref('Internet', 'SMTP_Username', 'matlabcrashreporter@gmail.com');
-setpref('Internet', 'SMTP_Password', '~~');
-setpref('Internet', 'SMTP_Server', 'smtp.gmail.com');
-props = java.lang.System.getProperties;
-props.setProperty('mail.smtp.auth','true');
-props.setProperty('mail.smtp.socketFactory.class', 'javax.net.ssl.SSLSocketFactory');
-props.setProperty('mail.smtp.socketFactory.port', '465');
+% disp('Configuring email account for Matlab Crash Reporter...')
+% setpref('Internet', 'E_mail', 'matlabcrashreporter@gmail.com');
+% setpref('Internet', 'SMTP_Username', 'matlabcrashreporter@gmail.com');
+% setpref('Internet', 'SMTP_Password', '~~');
+% setpref('Internet', 'SMTP_Server', 'smtp.gmail.com');
+% props = java.lang.System.getProperties;
+% props.setProperty('mail.smtp.auth','true');
+% props.setProperty('mail.smtp.socketFactory.class', 'javax.net.ssl.SSLSocketFactory');
+% props.setProperty('mail.smtp.socketFactory.port', '465');
 
 % % options for MATLAB web publisher
-disp('Setting up options for MATLAB publish...')
-options = struct('showCode',false,'format','latex','imageFormat','pdf','figureSnapMethod','print','stylesheet','srinivas_latex.xsl');
+% disp('Setting up options for MATLAB publish...')
+% options = struct('showCode',false,'format','latex','imageFormat','pdf','figureSnapMethod','print','stylesheet','srinivas_latex.xsl');
 
 % mount a Network share 
+% make sure airport is installed and linked to 
+% (run sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport)
 disp('Checking to see if Newton is online...')
 if exist('/Volumes/emonetlab/')
 	disp('Newton is online.')
@@ -38,6 +40,7 @@ else
 			disp('Newton successfully mounted.')
 		else
 			% maybe took too long?
+			warning('Newton not mounted for mysterious reasons...')
 		end
 	else
 		disp('Not connected to Yale internet...')
@@ -51,7 +54,7 @@ else
 			end
 		
 		else
-			disp('Cant mount newton.')
+			warning('Cant mount newton.')
 		end
 	end
 end
