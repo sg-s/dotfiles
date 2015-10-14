@@ -23,8 +23,16 @@
 % mount a Network share 
 % make sure airport is installed and linked to 
 % (run sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport)
+
+% add path to /use/local/bin so we can use homebrew, and a lot of other stuff
+path1 = getenv('PATH');
+if isempty(strfind(path1,[':/usr/local/bin']))
+    path1 = [path1 ':/usr/local/bin'];
+end
+setenv('PATH', path1);
+
 disp('Checking to see if Newton is online...')
-if exist('/Volumes/emonetlab/')
+if exist('/Volumes/home/')
 	disp('Newton is online.')
 else
 	disp('Newton is not online.')
@@ -36,11 +44,11 @@ else
 		unix('open -n /code/MATLAB/MountNewton.app --args -AppCommandLineArg');
 		pause(2)
 		% check if its online
-		if exist('/Volumes/emonetlab/')
+		if exist('/Volumes/home/')
 			disp('Newton successfully mounted.')
 		else
 			% maybe took too long?
-			warning('Newton not mounted for mysterious reasons...')
+			
 		end
 	else
 		disp('Not connected to Yale internet...')
@@ -49,7 +57,7 @@ else
 			unix('open -n ~/Documents/MATLAB/MountNewton.app --args -AppCommandLineArg');
 			pause(2)
 			% check if its online
-			if exist('/Volumes/emonetlab/')
+			if exist('/Volumes/home/')
 				disp('Newton successfully mounted.')
 			end
 		
