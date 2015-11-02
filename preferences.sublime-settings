@@ -43,7 +43,8 @@
 		],
 		"osx":
 		[
-			"/Applications/MATLAB_R2015a.app/bin/maci64"
+			"/Applications/MATLAB_R2015a.app/bin/maci64",
+			"/usr/local/bin/proselint"
 		],
 		"windows":
 		[
