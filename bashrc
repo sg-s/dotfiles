@@ -11,6 +11,10 @@
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
 
+# use sublime text as default editor
+VISUAL=subl; export VISUAL
+EDITOR=subl; export EDITOR
+
 
 ########     ###    ######## ##     ##  ######  
 ##     ##   ## ##      ##    ##     ## ##    ## 
@@ -22,14 +26,15 @@ PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★
 
 # 3rd party apps
 
+
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
 
 # sublime text (i.e., the subl command)
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH" 
 
-# matlab (to run headless in the command prompt)
-export PATH="/Applications/MATLAB_R2014b.app/bin/maci64:$PATH"  
+# run matlab headless
+alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
 # https://github.com/sg-s/auto-bots
 export PATH="/code/auto-bots:$PATH"            
