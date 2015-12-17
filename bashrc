@@ -3,10 +3,10 @@
 # 
 # add this to your ~/.bashrc or ~/.bash_profile:
 # case $- in
-#    *i*) source ~/code/config-files/.bashrc # fix this path to point to where this file is
+#    *i*) source ~/code/config-files/bashrc # fix this path to point to where this file is
 # esac
 #
-# Tweak the following things as needed. Warning: rearranging the order of things may break things
+# Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
@@ -27,14 +27,14 @@ EDITOR=subl; export EDITOR
 # 3rd party apps
 
 
+# latex -> html
+export PATH="/code/latex-to-html5/:$PATH" 
+
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
 
 # sublime text (i.e., the subl command)
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH" 
-
-# run matlab headless
-alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
 # https://github.com/sg-s/auto-bots
 export PATH="/code/auto-bots:$PATH"            
@@ -96,6 +96,13 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 ##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
  ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
 
+# handy git shortcuts
+alias ga='git add -A .'
+alias gc='git commit -v'
+alias gp='git push'
+
+# run matlab headless
+alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
 # odin shortcut
 alias odin='ssh odin.srinivas.gs'

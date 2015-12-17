@@ -12,7 +12,7 @@
 
 % add path to /use/local/bin so we can use homebrew, and a lot of other stuff
 path1 = getenv('PATH');
-if isempty(strfind(path1,[':/usr/local/bin']))
+if isempty(strfind(path1,':/usr/local/bin'))
     path1 = [path1 ':/usr/local/bin'];
 end
 setenv('PATH', path1);
