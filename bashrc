@@ -28,7 +28,7 @@ EDITOR=subl; export EDITOR
 
 
 # latex -> html
-export PATH="/code/latex-to-html5/:$PATH" 
+export PATH="/code/latex-to-html5:$PATH" 
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
