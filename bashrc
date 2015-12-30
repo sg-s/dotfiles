@@ -24,8 +24,8 @@ EDITOR=subl; export EDITOR
 ##        ##     ##    ##    ##     ## ##    ## 
 ##        ##     ##    ##    ##     ##  ######  
 
-# 3rd party apps
-
+# Specify your defaults in this environment variable
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # latex -> html
 export PATH="/code/latex-to-html5:$PATH" 
