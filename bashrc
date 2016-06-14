@@ -8,12 +8,22 @@
 #
 # Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
+# fuck support
+eval $(thefuck --alias) 
+
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
 
 # use sublime text as default editor
 VISUAL=subl; export VISUAL
 EDITOR=subl; export EDITOR
+
+# support for "command not found"
+if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+
+# support for github-release
+export GITHUB_TOKEN=$(<.git.yale.edu-token)
+
 
 
 ########     ###    ######## ##     ##  ######  
@@ -24,6 +34,11 @@ EDITOR=subl; export EDITOR
 ##        ##     ##    ##    ##     ## ##    ## 
 ##        ##     ##    ##    ##     ##  ######  
 
+# git auto-completion 
+if [ -f /code/config-files/git-completion.bash ]; then
+  . /code/config-files/git-completion.bash
+fi
+
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -32,6 +47,9 @@ export PATH="/code/latex-to-html5:$PATH"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
+
+# nVIDIA cuda
+export PATH="/usr/local/cuda/bin:$PATH"
 
 # sublime text (i.e., the subl command)
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH" 
@@ -96,10 +114,18 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 ##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
  ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
 
+# python
+alias pip3-UA='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+
+# misc shortcuts
+alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
+alias arpscan='sudo arp-scan --interface=en0 --localnet'
+
 # handy git shortcuts
 alias ga='git add -A .'
 alias gc='git commit -v'
-alias gp='git push'
+alias gp='git push && git push alt master'
+alias gd='git diff --color | diff-so-fancy'
 
 # run matlab headless
 alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'

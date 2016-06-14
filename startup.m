@@ -18,7 +18,7 @@ end
 setenv('PATH', path1);
 
 disp('Checking to see if Emonetlab backup is online...')
-if exist('/Volumes/home/')
+if exist('/Volumes/home/srinivas_gs/','dir') == 7
 	disp('Emonetlab backup is online.')
 else
 	disp('Emonetlab backup is not online.')
@@ -30,7 +30,7 @@ else
 		unix('open -n /code/MATLAB/mount_emonetlab_backup.app --args -AppCommandLineArg');
 		pause(2)
 		% check if its online
-		if exist('/Volumes/home/')
+		if exist('/Volumes/home/srinivas_gs/','dir') == 7
 			disp('Emonetlab backup successfully mounted.')
 		else
 			% maybe took too long?
@@ -43,7 +43,7 @@ else
 			unix('open -n /code/MATLAB/mount_emonetlab_backup.app --args -AppCommandLineArg');
 			pause(2)
 			% check if its online
-			if exist('/Volumes/home/')
+			if exist('/Volumes/home/srinivas_gs/','dir') == 7
 				disp('Emonetlab backup successfully mounted.')
 			end
 		
@@ -55,18 +55,16 @@ end
 
 
 % Configuring POI library for Excel export...
-javaaddpath('/code/core/poi_library/poi-3.8-20120326.jar');
-javaaddpath('/code/core/poi_library/poi-ooxml-3.8-20120326.jar');
-javaaddpath('/code/core/poi_library/poi-ooxml-schemas-3.8-20120326.jar');
-javaaddpath('/code/core/poi_library/xmlbeans-2.3.0.jar');
-javaaddpath('/code/core/poi_library/dom4j-1.6.1.jar');
-disp('DONE')
+poi_library_path = '/code/poi-3.13/';
+allfiles = dir([poi_library_path '*.jar']);
+for i = 1:length(allfiles)
+	javaaddpath([poi_library_path allfiles(i).name]);
+end
+
+disp('Configured POI library.')
 
 
 % fix stupid figure sizes
 set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
-
-% % start the parallel pool
-% parpool('local',4);
 
 disp('All DONE!')
