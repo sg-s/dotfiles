@@ -12,27 +12,26 @@
 eval $(thefuck --alias) 
 
 # make a better prompt, colours, etc. 
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\] ★ '
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
 
-# use sublime text as default editor
-VISUAL=subl; export VISUAL
-EDITOR=subl; export EDITOR
+# support for "command not found" !!!this seems slow
+# if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
 
-# support for "command not found"
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+# # support for github-release
+# export GITHUB_TOKEN=$(<.git.yale.edu-token)
 
-# support for github-release
-export GITHUB_TOKEN=$(<.git.yale.edu-token)
+# set default text editor to subl
+export EDITOR=subl
+export VISUAL=subl
+export HOMEBREW_EDITOR=subl
 
-
-
-########     ###    ######## ##     ##  ######  
-##     ##   ## ##      ##    ##     ## ##    ## 
-##     ##  ##   ##     ##    ##     ## ##       
-########  ##     ##    ##    #########  ######  
-##        #########    ##    ##     ##       ## 
-##        ##     ##    ##    ##     ## ##    ## 
-##        ##     ##    ##    ##     ##  ######  
+# ########     ###    ######## ##     ##  ######  
+# ##     ##   ## ##      ##    ##     ## ##    ## 
+# ##     ##  ##   ##     ##    ##     ## ##       
+# ########  ##     ##    ##    #########  ######  
+# ##        #########    ##    ##     ##       ## 
+# ##        ##     ##    ##    ##     ## ##    ## 
+# ##        ##     ##    ##    ##     ##  ######  
 
 # git auto-completion 
 if [ -f /code/config-files/git-completion.bash ]; then
@@ -42,14 +41,17 @@ fi
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# anaconda
+export PATH=~/anaconda3/bin:"$PATH"
+
 # latex -> html
 export PATH="/code/latex-to-html5:$PATH" 
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
 
-# nVIDIA cuda
-export PATH="/usr/local/cuda/bin:$PATH"
+# # nVIDIA cuda
+# export PATH="/usr/local/cuda/bin:$PATH"
 
 # sublime text (i.e., the subl command)
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH" 
@@ -61,36 +63,36 @@ export PATH="/code/auto-bots:$PATH"
 source /code/oh-my-git/prompt.sh    
 
 # go
-export GOPATH='/usr/local/go/bin'
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:/usr/local/go/bin/bin
+export GOPATH='/usr/local/bin/'
 
-# source /usr/local/etc/bash_completion.d/password-store
+# aliases for wifi
+source ~/.wifi/wifi
+
+# # source /usr/local/etc/bash_completion.d/password-store
 
 
-######## ######## ########  ##     ## #### ##    ##    ###    ##       
-   ##    ##       ##     ## ###   ###  ##  ###   ##   ## ##   ##       
-   ##    ##       ##     ## #### ####  ##  ####  ##  ##   ##  ##       
-   ##    ######   ########  ## ### ##  ##  ## ## ## ##     ## ##       
-   ##    ##       ##   ##   ##     ##  ##  ##  #### ######### ##       
-   ##    ##       ##    ##  ##     ##  ##  ##   ### ##     ## ##       
-   ##    ######## ##     ## ##     ## #### ##    ## ##     ## ######## 
+# ######## ######## ########  ##     ## #### ##    ##    ###    ##       
+#    ##    ##       ##     ## ###   ###  ##  ###   ##   ## ##   ##       
+#    ##    ##       ##     ## #### ####  ##  ####  ##  ##   ##  ##       
+#    ##    ######   ########  ## ### ##  ##  ## ## ## ##     ## ##       
+#    ##    ##       ##   ##   ##     ##  ##  ##  #### ######### ##       
+#    ##    ##       ##    ##  ##     ##  ##  ##   ### ##     ## ##       
+#    ##    ######## ##     ## ##     ## #### ##    ## ##     ## ######## 
 
- ######   #######  ##    ## ######## ####  ######   
-##    ## ##     ## ###   ## ##        ##  ##    ##  
-##       ##     ## ####  ## ##        ##  ##        
-##       ##     ## ## ## ## ######    ##  ##   #### 
-##       ##     ## ##  #### ##        ##  ##    ##  
-##    ## ##     ## ##   ### ##        ##  ##    ##  
- ######   #######  ##    ## ##       ####  ######   
+#  ######   #######  ##    ## ######## ####  ######   
+# ##    ## ##     ## ###   ## ##        ##  ##    ##  
+# ##       ##     ## ####  ## ##        ##  ##        
+# ##       ##     ## ## ## ## ######    ##  ##   #### 
+# ##       ##     ## ##  #### ##        ##  ##    ##  
+# ##    ## ##     ## ##   ### ##        ##  ##    ##  
+#  ######   #######  ##    ## ##       ####  ######   
 
 # better auto complete
 bind "set completion-ignore-case on"
 
 # improve history
 export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=10000   # remember more things in history 
+#export HISTSIZE=10000   # remember more things in history 
 
 # show the computer name in a cool font (using figlet)
 computer-name
@@ -106,16 +108,16 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 
 
- ######  ##     ##  #######  ########  ########  ######  ##     ## ########  ######  
-##    ## ##     ## ##     ## ##     ##    ##    ##    ## ##     ##    ##    ##    ## 
-##       ##     ## ##     ## ##     ##    ##    ##       ##     ##    ##    ##       
- ######  ######### ##     ## ########     ##    ##       ##     ##    ##     ######  
-      ## ##     ## ##     ## ##   ##      ##    ##       ##     ##    ##          ## 
-##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
- ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
+#  ######  ##     ##  #######  ########  ########  ######  ##     ## ########  ######  
+# ##    ## ##     ## ##     ## ##     ##    ##    ##    ## ##     ##    ##    ##    ## 
+# ##       ##     ## ##     ## ##     ##    ##    ##       ##     ##    ##    ##       
+#  ######  ######### ##     ## ########     ##    ##       ##     ##    ##     ######  
+#       ## ##     ## ##     ## ##   ##      ##    ##       ##     ##    ##          ## 
+# ##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
+#  ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
 
-# python
-alias pip3-UA='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+# # python
+# alias pip3-UA='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
 
 # misc shortcuts
 alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
@@ -127,8 +129,8 @@ alias gc='git commit -v'
 alias gp='git push && git push alt master'
 alias gd='git diff --color | diff-so-fancy'
 
-# run matlab headless
-alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
+# # run matlab headless
+# alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
 # odin shortcut
 alias odin='ssh odin.srinivas.gs'
@@ -158,80 +160,80 @@ alias fs='osascript /code/termtile//fullscreen.scpt '
 
 
 
-##    ##  #######  ########  ######## 
-###   ## ##     ## ##     ## ##       
-####  ## ##     ## ##     ## ##       
-## ## ## ##     ## ##     ## ######   
-##  #### ##     ## ##     ## ##       
-##   ### ##     ## ##     ## ##       
-##    ##  #######  ########  ######## 
+# ##    ##  #######  ########  ######## 
+# ###   ## ##     ## ##     ## ##       
+# ####  ## ##     ## ##     ## ##       
+# ## ## ## ##     ## ##     ## ######   
+# ##  #### ##     ## ##     ## ##       
+# ##   ### ##     ## ##     ## ##       
+# ##    ##  #######  ########  ######## 
 
 
-# node
-export NVM_HOME="$HOME/code/nvm"
-source "$NVM_HOME/nvm.sh"
-source "$NVM_HOME/bash_completion"
-. <(npm completion)
+# # node
+# export NVM_HOME="$HOME/code/nvm"
+# source "$NVM_HOME/nvm.sh"
+# source "$NVM_HOME/bash_completion"
+# . <(npm completion)
 
-# Checks that the child directory is a subdirectory of the parent
-is_subdirectory() {
-    local child="$1"
-    local parent="$2"
-    if [[ "${child##${parent}}" != "$child" ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
+# # Checks that the child directory is a subdirectory of the parent
+# is_subdirectory() {
+#     local child="$1"
+#     local parent="$2"
+#     if [[ "${child##${parent}}" != "$child" ]]; then
+#         return 0
+#     else
+#         return 1
+#     fi
+# }
 
-# Activates a new environment
-activate_env() {
-    # Check if the directory we've cd'ed into is a node environment directory
-    # (i.e., it contains a node_modules folder) and that a node environment
-    # does not already exist before creating a new one.
-    if [ -d "node_modules" ] && [ -z "$_ENV_DIR" ]; then
+# # Activates a new environment
+# activate_env() {
+#     # Check if the directory we've cd'ed into is a node environment directory
+#     # (i.e., it contains a node_modules folder) and that a node environment
+#     # does not already exist before creating a new one.
+#     if [ -d "node_modules" ] && [ -z "$_ENV_DIR" ]; then
 
-        # Save the old PATH variable so we can revert back to it when we leave
-        # the environment
-        export _OLD_PATH="$PATH"
+#         # Save the old PATH variable so we can revert back to it when we leave
+#         # the environment
+#         export _OLD_PATH="$PATH"
 
-        # An environment is essentially nothing more than an environment
-        # variable (_ENV_DIR) pointing the parent directory of our node
-        # environment. Create the variable and point it to $PWD.
-        export _ENV_DIR="$PWD"
+#         # An environment is essentially nothing more than an environment
+#         # variable (_ENV_DIR) pointing the parent directory of our node
+#         # environment. Create the variable and point it to $PWD.
+#         export _ENV_DIR="$PWD"
 
-        # Add the bin folder for all local NPM installs to the PATH
-        export PATH="$(npm bin):$PATH"
+#         # Add the bin folder for all local NPM installs to the PATH
+#         export PATH="$(npm bin):$PATH"
 
-        # If an activation script exists, execute it
-        if [ -e ".activate" ]; then
-            source .activate
-        fi
-    fi
-}
+#         # If an activation script exists, execute it
+#         if [ -e ".activate" ]; then
+#             source .activate
+#         fi
+#     fi
+# }
 
-# Deactivates the current envrionment
-deactivate_env() {
-    # Make sure that an environment does exist and that the new
-    # directory is not a subdirectory of the environment directory
-    if [ -n "$_ENV_DIR" ] && ! is_subdirectory "$PWD" "$_ENV_DIR"; then
+# # Deactivates the current envrionment
+# deactivate_env() {
+#     # Make sure that an environment does exist and that the new
+#     # directory is not a subdirectory of the environment directory
+#     if [ -n "$_ENV_DIR" ] && ! is_subdirectory "$PWD" "$_ENV_DIR"; then
 
-        # Run the deactivation script if it exists
-        if [[ -e "$_ENV_DIR/.deactivate" ]]; then
-            source "$_ENV_DIR/.deactivate"
-        fi
+#         # Run the deactivation script if it exists
+#         if [[ -e "$_ENV_DIR/.deactivate" ]]; then
+#             source "$_ENV_DIR/.deactivate"
+#         fi
 
-        # Revert back to the original PATH
-        export PATH="$_OLD_PATH"
+#         # Revert back to the original PATH
+#         export PATH="$_OLD_PATH"
 
-        # Destroy the environment
-        unset _ENV_DIR
-        unset _OLD_PATH
-    fi
-}
+#         # Destroy the environment
+#         unset _ENV_DIR
+#         unset _OLD_PATH
+#     fi
+# }
 
-env_cd() {
-    builtin cd "$@" && deactivate_env && activate_env
-}
+# env_cd() {
+#     builtin cd "$@" && deactivate_env && activate_env
+# }
 
-alias cd="env_cd"
+# alias cd="env_cd"
