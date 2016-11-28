@@ -67,4 +67,7 @@ disp('Configured POI library.')
 % fix stupid figure sizes
 set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
 
+% check if all code is committed
+isCodeCommitted
+
 disp('All DONE!')
