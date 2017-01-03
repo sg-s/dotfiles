@@ -41,18 +41,24 @@ disp('Configured POI library.')
 set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
 
 % check if all code is committed
-isCodeCommitted
+try
+	isCodeCommitted
+catch
+end
 
 % check if the USB drive is connected
 if exist('/Volumes/sgs_data','dir') == 7
 	disp('USB drive connected')
 else
-	cprintf('red','Connect USB drive!')
-	disp('Starting Dropbox if needed...')
+	cprintf('red','Connect USB drive!\n')
+	cprintf('green','Starting Dropbox if needed...\n')
 	pause(5)
 	[~,r] = system('pgrep Dropbox | wc -l');
-	if ~r 
-		disp('Dropbox not running. Will start Dropbox...')
+	r = str2double(r);
+	if r
+		cprintf('green','Dropbox running\n') 
+	else
+		cprintf('red','Dropbox not running. Will start Dropbox...')
 		system('open /Applications/Dropbox.app');
 	end
 end
