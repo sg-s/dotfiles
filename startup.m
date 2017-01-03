@@ -51,16 +51,17 @@ if exist('/Volumes/sgs_data','dir') == 7
 	disp('USB drive connected')
 else
 	cprintf('red','Connect USB drive!\n')
-	cprintf('green','Starting Dropbox if needed...\n')
-	pause(5)
-	[~,r] = system('pgrep Dropbox | wc -l');
-	r = str2double(r);
-	if r
-		cprintf('green','Dropbox running\n') 
-	else
-		cprintf('red','Dropbox not running. Will start Dropbox...')
-		system('open /Applications/Dropbox.app');
-	end
+end
+
+cprintf('green','Starting Dropbox if needed...\n')
+pause(5)
+[~,r] = system('pgrep Dropbox | wc -l');
+r = str2double(r);
+if r
+	cprintf('green','Dropbox running\n') 
+else
+	cprintf('red','Dropbox not running. Will start Dropbox...')
+	system('open /Applications/Dropbox.app');
 end
 
 disp('All DONE!')
