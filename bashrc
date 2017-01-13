@@ -50,6 +50,9 @@ export PATH="/code/latex-to-html5:$PATH"
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
 
+# webdrivers for selenium
+export PATH="/code/webdrivers:$PATH" 
+
 # # nVIDIA cuda
 # export PATH="/usr/local/cuda/bin:$PATH"
 
