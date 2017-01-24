@@ -38,6 +38,9 @@ if [ -f /code/config-files/git-completion.bash ]; then
   . /code/config-files/git-completion.bash
 fi
 
+# matlab
+export PATH="/Applications/MATLAB_R2015a.app/bin:$PATH"
+
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
