@@ -21,9 +21,9 @@ PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★
 # export GITHUB_TOKEN=$(<.git.yale.edu-token)
 
 # set default text editor to subl
-export EDITOR=subl
-export VISUAL=subl
-export HOMEBREW_EDITOR=subl
+# export EDITOR=subl
+# export VISUAL=subl
+# export HOMEBREW_EDITOR=subl
 
 # ########     ###    ######## ##     ##  ######  
 # ##     ##   ## ##      ##    ##     ## ##    ## 
@@ -138,8 +138,6 @@ alias gd='git diff --color | diff-so-fancy'
 # # run matlab headless
 # alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
-# odin shortcut
-alias odin='ssh odin.srinivas.gs'
 
 # supports history search using up and down arrows
 bind '"\e[A": history-search-backward'
