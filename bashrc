@@ -39,16 +39,13 @@ if [ -f /code/config-files/git-completion.bash ]; then
 fi
 
 # matlab
-export PATH="/Applications/MATLAB_R2015a.app/bin:$PATH"
+export PATH="/Applications/MATLAB_R2017a.app/bin:$PATH"
 
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # anaconda
 export PATH=~/anaconda3/bin:"$PATH"
-
-# latex -> html
-export PATH="/code/latex-to-html5:$PATH" 
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
@@ -134,9 +131,6 @@ alias ga='git add -A .'
 alias gc='git commit -v'
 alias gp='git push && git push alt master'
 alias gd='git diff --color | diff-so-fancy'
-
-# # run matlab headless
-# alias matlab='/Applications/MATLAB_R2015a.app/bin/matlab -nojvm'
 
 
 # supports history search using up and down arrows
