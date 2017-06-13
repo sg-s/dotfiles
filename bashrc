@@ -41,9 +41,6 @@ export PATH="/Applications/MATLAB_R2017a.app/bin:$PATH"
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# anaconda
-export PATH=~/anaconda3/bin:"$PATH"
-
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
 
