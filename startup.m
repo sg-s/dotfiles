@@ -19,7 +19,7 @@ setenv('PATH', path1);
 
 % paths for Multicore TSNE
 [~,home_path] = system('cd ~; pwd');
-a_path = strrep('~/anaconda3/bin','~',strtrim(home_path));
+a_path = strrep('~/anaconda/bin','~',strtrim(home_path));
 path1 = getenv('PATH');
 if isempty(strfind(path1,[pathsep a_path]))
     path1 = [a_path pathsep path1];
