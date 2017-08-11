@@ -135,16 +135,24 @@ bind '"\eOB": history-search-forward'
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
-# Added by termtile (https://github.com/apaszke/termtile)
-alias ur='osascript /code/termtile//tile.scpt up right'
-alias dl='osascript /code/termtile//tile.scpt down left'
-alias dr='osascript /code/termtile//tile.scpt down right'
-alias ll='osascript /code/termtile//tile.scpt left'
-alias rr='osascript /code/termtile//tile.scpt right'
-alias up='osascript /code/termtile//tile.scpt up'
-alias down='osascript /code/termtile//tile.scpt down'
-alias big='osascript /code/termtile//resize.scpt '
-alias cen='osascript /code/termtile//center.scpt '
-alias max='osascript /code/termtile//maximize.scpt '
-alias sn='osascript /code/termtile//changeScreen.scpt next'
-alias fs='osascript /code/termtile//fullscreen.scpt '
+# # Added by termtile (https://github.com/apaszke/termtile)
+# alias ur='osascript /code/termtile//tile.scpt up right'
+# alias dl='osascript /code/termtile//tile.scpt down left'
+# alias dr='osascript /code/termtile//tile.scpt down right'
+# alias ll='osascript /code/termtile//tile.scpt left'
+# alias rr='osascript /code/termtile//tile.scpt right'
+# alias up='osascript /code/termtile//tile.scpt up'
+# alias down='osascript /code/termtile//tile.scpt down'
+# alias big='osascript /code/termtile//resize.scpt '
+# alias cen='osascript /code/termtile//center.scpt '
+# alias max='osascript /code/termtile//maximize.scpt '
+# alias sn='osascript /code/termtile//changeScreen.scpt next'
+# alias fs='osascript /code/termtile//fullscreen.scpt '
+
+# # add all SSH keys
+# for file in ~/.ssh/*.pub; do 
+#     file=${file%.*}
+#     #echo $file
+#     ssh-add $file
+# done
+
