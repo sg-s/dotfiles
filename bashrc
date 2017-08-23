@@ -9,7 +9,11 @@
 # Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
 # fuck support
-eval $(thefuck --alias) 
+if [ "dalek.bio.brandeis.edu"=$(hostname) ]; then
+	echo ""
+else
+	eval $(thefuck --alias)
+fi 
 
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
@@ -34,6 +38,10 @@ PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★
 if [ -f /code/config-files/git-completion.bash ]; then
   . /code/config-files/git-completion.bash
 fi
+
+# julia
+
+export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
 
 # matlab
 export PATH="/Applications/MATLAB_R2017a.app/bin:$PATH"
@@ -63,7 +71,12 @@ source /code/oh-my-git/prompt.sh
 export GOPATH='/usr/local/bin/'
 
 # aliases for wifi
-source ~/.wifi/wifi
+if [ "dalek.bio.brandeis.edu"=$(hostname) ]; then
+	echo ""
+else
+	source ~/.wifi/wifi
+fi 
+
 
 # # source /usr/local/etc/bash_completion.d/password-store
 
@@ -95,7 +108,14 @@ export HISTCONTROL=ignoreboth:erasedups
 computer-name
 
 # stupid fortune
-fortune 
+# aliases for wifi
+if [ "dalek.bio.brandeis.edu"=$(hostname) ]; then
+	echo ""
+else
+	fortune 
+fi 
+
+
 
 # color folders in ls 
 alias ls='ls -G'
