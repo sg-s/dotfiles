@@ -2,11 +2,9 @@
 % 
 % created by Srinivas Gorur-Shandilya at 1:44 , 31 March 2015. Contact me at http://srinivas.gs/contact/
 % 
-% This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
-% To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
 
-% mount a Network share 
+% mount a Network share (macOS only)
 % make sure airport is installed and linked to 
 % (run sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport)
 
@@ -47,21 +45,21 @@ catch
 end
 
 % check if the USB drive is connected
-if exist('/Volumes/sgs_data','dir') == 7
-	disp('USB drive connected')
-else
-	cprintf('red','Connect USB drive!\n')
-end
+% if exist('/Volumes/sgs_data','dir') == 7
+% 	disp('USB drive connected')
+% else
+% 	cprintf('red','Connect USB drive!\n')
+% end
 
-cprintf('green','Starting Dropbox if needed...\n')
-pause(5)
-[~,r] = system('pgrep Dropbox | wc -l');
-r = str2double(r);
-if r
-	cprintf('green','Dropbox running\n') 
-else
-	cprintf('red','Dropbox not running. Will start Dropbox...')
-	system('open /Applications/Dropbox.app');
-end
+% cprintf('green','Starting Dropbox if needed...\n')
+% pause(5)
+% [~,r] = system('pgrep Dropbox | wc -l');
+% r = str2double(r);
+% if r
+% 	cprintf('green','Dropbox running\n') 
+% else
+% 	cprintf('red','Dropbox not running. Will start Dropbox...')
+% 	system('open /Applications/Dropbox.app');
+% end
 
 disp('All DONE!')
