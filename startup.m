@@ -24,24 +24,26 @@ if isempty(strfind(path1,[pathsep a_path]))
 end
 setenv('PATH', path1);
 
+if usejava('jvm')
+	% Configuring POI library for Excel export...
+	poi_library_path = '/code/poi-3.13/';
+	allfiles = dir([poi_library_path '*.jar']);
+	for i = 1:length(allfiles)
+		javaaddpath([poi_library_path allfiles(i).name]);
+	end
 
-% Configuring POI library for Excel export...
-poi_library_path = '/code/poi-3.13/';
-allfiles = dir([poi_library_path '*.jar']);
-for i = 1:length(allfiles)
-	javaaddpath([poi_library_path allfiles(i).name]);
-end
-
-disp('Configured POI library.')
+	disp('Configured POI library.')
 
 
-% fix stupid figure sizes
-set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
+	% fix stupid figure sizes
+	set(0, 'DefaultFigurePosition', [-1790 200 1300 700]);
 
-% check if all code is committed
-try
-	isCodeCommitted
-catch
+	% check if all code is committed
+	try
+		isCodeCommitted
+	catch
+	end
+
 end
 
 % check if the USB drive is connected
@@ -60,6 +62,6 @@ end
 % else
 % 	cprintf('red','Dropbox not running. Will start Dropbox...')
 % 	system('open /Applications/Dropbox.app');
-% end
+% % end
 
 disp('All DONE!')
