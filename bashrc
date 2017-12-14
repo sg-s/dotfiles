@@ -43,8 +43,12 @@ fi
 
 export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
 
+# python pipenv
+export PATH="~/.local/bin:$PATH"
+
 # matlab
 export PATH="/Applications/MATLAB_R2017a.app/bin:$PATH"
+export PATH="/Applications/MATLAB_R2017a.app/bin/maci64:$PATH"
 
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -143,7 +147,7 @@ alias arpscan='sudo arp-scan --interface=en0 --localnet'
 # handy git shortcuts
 alias ga='git add -A .'
 alias gc='git commit -v'
-alias gp='git push && git push alt master'
+# alias gp='git push && git push alt master'
 alias gd='git diff --color | diff-so-fancy'
 
 
