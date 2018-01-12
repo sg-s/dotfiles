@@ -24,6 +24,15 @@ if isempty(strfind(path1,[pathsep a_path]))
 end
 setenv('PATH', path1);
 
+[~,home_path] = system('cd ~; pwd');
+a_path = strrep('~/anaconda/bin','~',strtrim(home_path));
+path1 = getenv('PATH');
+if isempty(strfind(path1,[pathsep a_path]))
+    path1 = [a_path pathsep path1];
+end
+setenv('PATH', path1);
+
+
 if usejava('jvm')
 	% Configuring POI library for Excel export...
 	poi_library_path = '/code/poi-3.13/';
