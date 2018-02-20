@@ -40,8 +40,7 @@ if [ -f /code/config-files/git-completion.bash ]; then
 fi
 
 # julia
-
-export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
+# export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
 
 # python pipenv
 export PATH="~/.local/bin:$PATH"
@@ -126,8 +125,9 @@ alias ls='ls -G'
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-
-
+# use system ssh instead of homebrew ssh
+# alias ssh='/usr/bin/ssh'
+# alias scp='/usr/bin/scp'
 
 #  ######  ##     ##  #######  ########  ########  ######  ##     ## ########  ######  
 # ##    ## ##     ## ##     ## ##     ##    ##    ##    ## ##     ##    ##    ##    ## 

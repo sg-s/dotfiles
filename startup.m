@@ -4,10 +4,6 @@
 % 
 
 
-% mount a Network share (macOS only)
-% make sure airport is installed and linked to 
-% (run sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport)
-
 % add path to /use/local/bin so we can use homebrew, and a lot of other stuff
 path1 = getenv('PATH');
 if isempty(strfind(path1,':/usr/local/bin'))
@@ -15,22 +11,22 @@ if isempty(strfind(path1,':/usr/local/bin'))
 end
 setenv('PATH', path1);
 
-% paths for Multicore TSNE
-[~,home_path] = system('cd ~; pwd');
-a_path = strrep('~/anaconda3/bin','~',strtrim(home_path));
-path1 = getenv('PATH');
-if isempty(strfind(path1,[pathsep a_path]))
-    path1 = [a_path pathsep path1];
-end
-setenv('PATH', path1);
+% % paths for Multicore TSNE
+% [~,home_path] = system('cd ~; pwd');
+% a_path = strrep('~/anaconda3/bin','~',strtrim(home_path));
+% path1 = getenv('PATH');
+% if isempty(strfind(path1,[pathsep a_path]))
+%     path1 = [a_path pathsep path1];
+% end
+% setenv('PATH', path1);
 
-[~,home_path] = system('cd ~; pwd');
-a_path = strrep('~/anaconda/bin','~',strtrim(home_path));
-path1 = getenv('PATH');
-if isempty(strfind(path1,[pathsep a_path]))
-    path1 = [a_path pathsep path1];
-end
-setenv('PATH', path1);
+% [~,home_path] = system('cd ~; pwd');
+% a_path = strrep('~/anaconda/bin','~',strtrim(home_path));
+% path1 = getenv('PATH');
+% if isempty(strfind(path1,[pathsep a_path]))
+%     path1 = [a_path pathsep path1];
+% end
+% setenv('PATH', path1);
 
 
 if usejava('jvm')
