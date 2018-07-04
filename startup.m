@@ -29,5 +29,11 @@ if usejava('jvm')
 
 end
 
+disp('Cleaning up .kapalin paths...')
+kapalin.init()
+
+disp('Setting MATLAB shortcut to start from the commandline...')
+system(['ln -s ' matlabroot '/bin/matlab ~/matlab']);
+
 
 disp('All DONE!')

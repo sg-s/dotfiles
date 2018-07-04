@@ -2,6 +2,6 @@
 
 
 % check if there are uncommitted changes to any of the project repositories 
-if usejava('jvm')
+if usejava('jvm') && isempty(java.lang.System.getProperty( 'java.awt.headless' ))
 	isCodeCommitted;
 end
