@@ -39,12 +39,17 @@ fi
 # julia
 # export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
 
+# go path
+# this is for things like github-release
+# which need go
+export GOPATH='/usr/local/bin/'
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # python pipenv
 export PATH="~/.local/bin:$PATH"
 
 # matlab
 export PATH="/Applications/MATLAB_R2018a.app/bin:$PATH"
-export PATH="/Applications/MATLAB_R2018a.app/bin/maci64:$PATH"
 
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -64,8 +69,7 @@ export PATH="/code/auto-bots:$PATH"
 # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
 source /code/oh-my-git/prompt.sh    
 
-# go
-export GOPATH='/usr/local/bin/'
+
 
 
 # ######## ######## ########  ##     ## #### ##    ##    ###    ##       
@@ -113,6 +117,9 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 # ##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
 #  ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
 
 
 # misc shortcuts
@@ -121,8 +128,6 @@ alias arpscan='sudo arp-scan --interface=en0 --localnet'
 
 # handy git shortcuts
 alias ga='git add -A .'
-alias gc='git commit -v'
-# alias gp='git push && git push alt master'
 alias gd='git diff --color | diff-so-fancy'
 
 
