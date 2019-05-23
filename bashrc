@@ -45,6 +45,8 @@ fi
 export GOPATH='/usr/local/bin/'
 export PATH=$PATH:$(go env GOPATH)/bin
 
+export PATH="/code/flutter/bin:$PATH"
+
 # python pipenv
 export PATH="~/.local/bin:$PATH"
 
