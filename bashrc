@@ -8,12 +8,6 @@
 #
 # Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
-# fuck support
-if [ "dalek.bio.brandeis.edu"=$(hostname) ]; then
-	echo ""
-else
-	eval $(thefuck --alias)
-fi 
 
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
@@ -36,8 +30,6 @@ if [ -f /code/config-files/git-completion.bash ]; then
   . /code/config-files/git-completion.bash
 fi
 
-# julia
-# export PATH="/Applications/JuliaPro-0.6.0.1.app/Contents/Resources/julia/Contents/Resources/julia/bin:$PATH"
 
 # go path
 # this is for things like github-release
@@ -58,12 +50,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH" 
-
-# webdrivers for selenium
-# export PATH="/code/webdrivers:$PATH" 
-
-# # nVIDIA cuda
-# export PATH="/usr/local/cuda/bin:$PATH"
 
 # https://github.com/sg-s/auto-bots
 export PATH="/code/auto-bots:$PATH"            
