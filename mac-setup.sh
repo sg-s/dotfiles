@@ -46,7 +46,7 @@ then
 	echo "a link to the code folder exists in root"
 else
 	echo "No link in root, making one..."
-	ln -s /Users/$USERNAME/GoogleDrive/code code
+	sudo ln -s /Users/$USERNAME/GoogleDrive/code /code
 fi
 
 
