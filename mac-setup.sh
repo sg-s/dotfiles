@@ -61,6 +61,10 @@ fi
 
 
 # switch to bash 5
+# instructions from 
+# here
+# 
+# https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 brewinstall bash
 a=$(less /etc/shells | grep "/usr/local/bin/bash" | wc -l)
 if [ $a -gt 0 ]
