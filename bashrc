@@ -52,10 +52,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/usr/local/sbin:$PATH" 
 
 # https://github.com/sg-s/auto-bots
-export PATH="/code/auto-bots:$PATH"            
+export PATH="/Users/srinivas/code/auto-bots:$PATH"            
 
 # awesome git prompt, see: https://github.com/arialdomartini/oh-my-git
-source /code/oh-my-git/prompt.sh    
+source ~/code/oh-my-git/prompt.sh    
 
 
 
