@@ -31,13 +31,7 @@ if [ -f /code/config-files/git-completion.bash ]; then
 fi
 
 
-# go path
-# this is for things like github-release
-# which need go
-export GOPATH='/usr/local/bin/'
-export PATH=$PATH:$(go env GOPATH)/bin
-
-export PATH="/code/flutter/bin:$PATH"
+export PATH="~/code/uflix:$PATH"
 
 # python pipenv
 export PATH="~/.local/bin:$PATH"
