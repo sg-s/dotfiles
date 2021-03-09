@@ -19,8 +19,8 @@ bind 'set enable-bracketed-paste on'
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
 
 # set default text editor to subl
-export EDITOR='subl -w'
-export VISUAL='subl -w'
+export EDITOR='sublw'
+export VISUAL='sublw'
 export HOMEBREW_EDITOR=subl
 
 # ########     ###    ######## ##     ##  ######  
