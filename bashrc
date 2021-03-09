@@ -9,12 +9,18 @@
 # Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
 
+# supposedly protects against attacks via paste
+# see: https://unix.stackexchange.com/questions/309786/disable-default-copypaste-behaviour-in-bash/309798#309798
+# and https://cirw.in/blog/bracketed-paste
+bind 'set enable-bracketed-paste on'
+
+
 # make a better prompt, colours, etc. 
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
 
 # set default text editor to subl
-export EDITOR=subl
-export VISUAL=subl
+export EDITOR='subl -w'
+export VISUAL='subl -w'
 export HOMEBREW_EDITOR=subl
 
 # ########     ###    ######## ##     ##  ######  
@@ -80,7 +86,7 @@ export HISTCONTROL=ignoreboth:erasedups
 # show the computer name in a cool font (using figlet)
 computer-name
 
-
+alias y='youtube-dl -x'
 
 # color folders in ls 
 alias ls='ls -G'
