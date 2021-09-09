@@ -23,6 +23,8 @@ export EDITOR='sublw'
 export VISUAL='sublw'
 export HOMEBREW_EDITOR=subl
 
+export JULIA_NUM_THREADS=8
+
 # ########     ###    ######## ##     ##  ######  
 # ##     ##   ## ##      ##    ##     ## ##    ## 
 # ##     ##  ##   ##     ##    ##     ## ##       
@@ -109,6 +111,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 
+
+alias pluto='julia -e "using Pluto; Pluto.run()"'
 
 # misc shortcuts
 alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
