@@ -9,37 +9,24 @@
 # Tweak the following things as needed. Warning: rearranging the order of things may break everything. 
 
 
-# supposedly protects against attacks via paste
-# see: https://unix.stackexchange.com/questions/309786/disable-default-copypaste-behaviour-in-bash/309798#309798
-# and https://cirw.in/blog/bracketed-paste
-bind 'set enable-bracketed-paste on'
 
 
-# make a better prompt, colours, etc. 
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
-
-# set default text editor to subl
-export EDITOR='sublw'
-export VISUAL='sublw'
-export HOMEBREW_EDITOR=subl
-
-export JULIA_NUM_THREADS=8
-
-# ########     ###    ######## ##     ##  ######  
-# ##     ##   ## ##      ##    ##     ## ##    ## 
-# ##     ##  ##   ##     ##    ##     ## ##       
-# ########  ##     ##    ##    #########  ######  
-# ##        #########    ##    ##     ##       ## 
-# ##        ##     ##    ##    ##     ## ##    ## 
-# ##        ##     ##    ##    ##     ##  ######  
+             _   _         
+#  _ __   __ _| |_| |__  ___ 
+# | '_ \ / _` | __| '_ \/ __|
+# | |_) | (_| | |_| | | \__ \
+# | .__/ \__,_|\__|_| |_|___/
+# |_|        
+# 
 
 # git auto-completion 
 if [ -f /code/config-files/git-completion.bash ]; then
   . /code/config-files/git-completion.bash
 fi
 
+#subl
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
-export PATH="~/code/uflix:$PATH"
 
 # python pipenv
 export PATH="~/.local/bin:$PATH"
@@ -62,21 +49,21 @@ source ~/code/oh-my-git/prompt.sh
 
 
 
-# ######## ######## ########  ##     ## #### ##    ##    ###    ##       
-#    ##    ##       ##     ## ###   ###  ##  ###   ##   ## ##   ##       
-#    ##    ##       ##     ## #### ####  ##  ####  ##  ##   ##  ##       
-#    ##    ######   ########  ## ### ##  ##  ## ## ## ##     ## ##       
-#    ##    ##       ##   ##   ##     ##  ##  ##  #### ######### ##       
-#    ##    ##       ##    ##  ##     ##  ##  ##   ### ##     ## ##       
-#    ##    ######## ##     ## ##     ## #### ##    ## ##     ## ######## 
+#   _               _       _                      _        
+#  | |__   __ _ ___| |__   | |___      _____  __ _| | _____ 
+#  | '_ \ / _` / __| '_ \  | __\ \ /\ / / _ \/ _` | |/ / __|
+#  | |_) | (_| \__ \ | | | | |_ \ V  V /  __/ (_| |   <\__ \
+#  |_.__/ \__,_|___/_| |_|  \__| \_/\_/ \___|\__,_|_|\_\___/
+                                                          
 
-#  ######   #######  ##    ## ######## ####  ######   
-# ##    ## ##     ## ###   ## ##        ##  ##    ##  
-# ##       ##     ## ####  ## ##        ##  ##        
-# ##       ##     ## ## ## ## ######    ##  ##   #### 
-# ##       ##     ## ##  #### ##        ##  ##    ##  
-# ##    ## ##     ## ##   ### ##        ##  ##    ##  
-#  ######   #######  ##    ## ##       ####  ######   
+# make a better prompt, colours, etc. 
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
+
+# supposedly protects against attacks via paste
+# see: https://unix.stackexchange.com/questions/309786/disable-default-copypaste-behaviour-in-bash/309798#309798
+# and https://cirw.in/blog/bracketed-paste
+bind 'set enable-bracketed-paste on'
+
 
 # better auto complete
 bind "set completion-ignore-case on"
@@ -88,39 +75,11 @@ export HISTCONTROL=ignoreboth:erasedups
 # show the computer name in a cool font (using figlet)
 computer-name
 
-alias y='youtube-dl -x'
 
 # color folders in ls 
 alias ls='ls -G'
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-
-# use system ssh instead of homebrew ssh
-# alias ssh='/usr/bin/ssh'
-# alias scp='/usr/bin/scp'
-
-#  ######  ##     ##  #######  ########  ########  ######  ##     ## ########  ######  
-# ##    ## ##     ## ##     ## ##     ##    ##    ##    ## ##     ##    ##    ##    ## 
-# ##       ##     ## ##     ## ##     ##    ##    ##       ##     ##    ##    ##       
-#  ######  ######### ##     ## ########     ##    ##       ##     ##    ##     ######  
-#       ## ##     ## ##     ## ##   ##      ##    ##       ##     ##    ##          ## 
-# ##    ## ##     ## ##     ## ##    ##     ##    ##    ## ##     ##    ##    ##    ## 
-#  ######  ##     ##  #######  ##     ##    ##     ######   #######     ##     ######  
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
-
-
-alias pluto='julia -e "using Pluto; Pluto.run()"'
-
-# misc shortcuts
-alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
-alias arpscan='sudo arp-scan --interface=en0 --localnet'
-
-# handy git shortcuts
-alias ga='git add -A .'
-alias gd='git diff --color | diff-so-fancy'
 
 
 # supports history search using up and down arrows
@@ -130,3 +89,48 @@ bind '"\eOA": history-search-backward'
 bind '"\eOB": history-search-forward'
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+
+# set default text editor to subl
+export EDITOR='sublw'
+export VISUAL='sublw'
+export HOMEBREW_EDITOR=subl
+
+
+#      _                _             _       
+#  ___| |__   ___  _ __| |_ ___ _   _| |_ ___ 
+# / __| '_ \ / _ \| '__| __/ __| | | | __/ __|
+# \__ \ | | | (_) | |  | || (__| |_| | |_\__ \
+# |___/_| |_|\___/|_|   \__\___|\__,_|\__|___/
+# 
+                                            
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
+
+# misc shortcuts
+alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
+alias arpscan='sudo arp-scan --interface=en0 --localnet'
+
+# handy git shortcuts
+alias ga='git add -A .'
+alias gd='git diff --color | diff-so-fancy'
+# gc is a shortcut for git commit and is stored elsewhere
+# similarly with gp for git push because it's a complex command
+
+
+
+
+
+#    _       _ _       
+#   (_)_   _| (_) __ _ 
+#   | | | | | | |/ _` |
+#   | | |_| | | | (_| |
+#  _/ |\__,_|_|_|\__,_|
+# |__/                 
+
+
+export JULIA_NUM_THREADS=8
+
+alias pluto='julia -e "using Pluto; Pluto.run()"'
