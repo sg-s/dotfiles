@@ -10,8 +10,53 @@
 
 
 
+#   _               _       _                      _        
+#  | |__   __ _ ___| |__   | |___      _____  __ _| | _____ 
+#  | '_ \ / _` / __| '_ \  | __\ \ /\ / / _ \/ _` | |/ / __|
+#  | |_) | (_| \__ \ | | | | |_ \ V  V /  __/ (_| |   <\__ \
+#  |_.__/ \__,_|___/_| |_|  \__| \_/\_/ \___|\__,_|_|\_\___/
+                                                          
 
-             _   _         
+# make a better prompt, colours, etc. 
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
+
+# supposedly protects against attacks via paste
+# see: https://unix.stackexchange.com/questions/309786/disable-default-copypaste-behaviour-in-bash/309798#309798
+# and https://cirw.in/blog/bracketed-paste
+bind 'set enable-bracketed-paste on'
+
+
+# better auto complete
+bind "set completion-ignore-case on"
+
+# improve history
+export HISTCONTROL=ignoreboth:erasedups
+#export HISTSIZE=10000   # remember more things in history 
+
+
+# color folders in ls 
+alias ls='ls -G'
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+
+# supports history search using up and down arrows
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+
+# set default text editor to subl
+export EDITOR='sublw'
+export VISUAL='sublw'
+export HOMEBREW_EDITOR=subl
+
+
+
+#              _   _         
 #  _ __   __ _| |_| |__  ___ 
 # | '_ \ / _` | __| '_ \/ __|
 # | |_) | (_| | |_| | | \__ \
@@ -48,53 +93,9 @@ source ~/code/oh-my-git/prompt.sh
 
 
 
-
-#   _               _       _                      _        
-#  | |__   __ _ ___| |__   | |___      _____  __ _| | _____ 
-#  | '_ \ / _` / __| '_ \  | __\ \ /\ / / _ \/ _` | |/ / __|
-#  | |_) | (_| \__ \ | | | | |_ \ V  V /  __/ (_| |   <\__ \
-#  |_.__/ \__,_|___/_| |_|  \__| \_/\_/ \___|\__,_|_|\_\___/
-                                                          
-
-# make a better prompt, colours, etc. 
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
-
-# supposedly protects against attacks via paste
-# see: https://unix.stackexchange.com/questions/309786/disable-default-copypaste-behaviour-in-bash/309798#309798
-# and https://cirw.in/blog/bracketed-paste
-bind 'set enable-bracketed-paste on'
-
-
-# better auto complete
-bind "set completion-ignore-case on"
-
-# improve history
-export HISTCONTROL=ignoreboth:erasedups
-#export HISTSIZE=10000   # remember more things in history 
-
 # show the computer name in a cool font (using figlet)
 computer-name
 
-
-# color folders in ls 
-alias ls='ls -G'
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-
-
-# supports history search using up and down arrows
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\eOA": history-search-backward'
-bind '"\eOB": history-search-forward'
-set show-all-if-ambiguous on
-set completion-ignore-case on
-
-
-# set default text editor to subl
-export EDITOR='sublw'
-export VISUAL='sublw'
-export HOMEBREW_EDITOR=subl
 
 
 #      _                _             _       
