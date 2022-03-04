@@ -15,7 +15,8 @@
 #  | '_ \ / _` / __| '_ \  | __\ \ /\ / / _ \/ _` | |/ / __|
 #  | |_) | (_| \__ \ | | | | |_ \ V  V /  __/ (_| |   <\__ \
 #  |_.__/ \__,_|___/_| |_|  \__| \_/\_/ \___|\__,_|_|\_\___/
-                                                          
+                    
+
 
 # make a better prompt, colours, etc. 
 PS1='($CONDA_DEFAULT_ENV) \[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;31m\]\w\[\e[0m\] ★ '
@@ -65,8 +66,8 @@ export HOMEBREW_EDITOR=subl
 # 
 
 # git auto-completion 
-if [ -f /code/config-files/git-completion.bash ]; then
-  . /code/config-files/git-completion.bash
+if [ -f /code/dotfiles-files/git-completion.bash ]; then
+  . /code/dotfiles/git-completion.bash
 fi
 
 #subl
@@ -77,7 +78,7 @@ export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 
 # matlab
-export PATH="/Applications/MATLAB_R2018a.app/bin:$PATH"
+export PATH="/Applications/MATLAB_R2019b.app/bin:$PATH"
 
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
