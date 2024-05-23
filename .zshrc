@@ -1,6 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
+
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -79,6 +82,7 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias ga='git add -A .'
+alias gc='git commit -v'
 alias gd='git diff --color | diff-so-fancy'
 # delete all merged branches, except main, dev, gh-pages
 alias dam='git branch | grep -i -v -E "main|dev|gh-pages" | xargs git branch -d'

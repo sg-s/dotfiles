@@ -1,13 +1,7 @@
 
 
-# add tools and script dir to path so those things are available
-DIR_THAT_CONTAINS_THIS_SCRIPT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-REPO_DIR="$(dirname "$DIR_THAT_CONTAINS_THIS_SCRIPT")"
-
-  
-export PATH=$REPO_DIR/tools:$PATH   
-export PATH=$REPO_DIR/git:$PATH    
+export PATH="$HOME/dotfiles/tools:$PATH"
+export PATH="$HOME/dotfiles/git:$PATH"    
 
 export PATH="$HOME/.local/bin":$PATH
 
