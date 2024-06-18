@@ -1,3 +1,5 @@
+#!/opt/homebrew/bin/bash
+
 # read instance ID from file
 IID=$(cat ~/.aws/instances)
 

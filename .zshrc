@@ -84,6 +84,7 @@ alias c='clear'
 alias ga='git add -A .'
 alias gc='git commit -v'
 alias gd='git diff --color | diff-so-fancy'
+alias gm="git checkout main && git pull"
 # delete all merged branches, except main, dev, gh-pages
 alias dam='git branch | grep -i -v -E "main|dev|gh-pages" | xargs git branch -d'
 # misc shortcuts
