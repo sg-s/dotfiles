@@ -1,0 +1,16 @@
+[project]
+name = "dev"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Srinivas Gorur-Shandilya <code@srinivas.gs>"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+
+[dependencies]
+python = "3.12.*"
+jupyter = ">=1.0.0,<1.1"
+jupyter-black = ">=0.3.4,<0.4"
+
+[tasks]
+jupyter = "jupyter lab  --port 8888 --notebook-dir /Users/srinivas/code/ --no-browser"
