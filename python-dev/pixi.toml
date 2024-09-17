@@ -11,6 +11,7 @@ platforms = ["osx-arm64"]
 python = "3.12.*"
 jupyter = ">=1.0.0,<1.1"
 jupyter-black = ">=0.3.4,<0.4"
+jupyterlab_execute_time = ">=3.1.2,<3.2"
 
 [tasks]
-jupyter = "jupyter lab  --port 8888 --notebook-dir /Users/srinivas/code/ --no-browser"
+jupyter = "jupyter lab  --port 8888 --notebook-dir /Users/srinivas/code/ --no-browser --config /Users/srinivas/.jupyter/jupyter_lab_config.py"

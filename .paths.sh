@@ -8,6 +8,10 @@ export PATH="$HOME/.local/bin":$PATH
 # deeporigin paths
 export PATH="$HOME/.deeporigin:$PATH"
 
+export PATH="$HOME/.pixi/bin:$PATH"
+
+
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # linux-like OS
     export PATH="/home/ubuntu/.local/bin:$PATH"
