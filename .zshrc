@@ -117,3 +117,4 @@ esac
 
 
 export PATH="/Users/srinivas/.pixi/bin:$PATH"
+eval "$(uvx --generate-shell-completion zsh)"
