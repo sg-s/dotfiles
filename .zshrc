@@ -89,6 +89,7 @@ alias gm="git checkout main && git pull"
 alias dam='git branch | grep -i -v -E "main|dev|gh-pages" | xargs git branch -d'
 # misc shortcuts
 alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
+alias jupyter='uv tool run --with jupyterlab_execute_time jupyter lab --notebook-dir=/Users/srinivas/code'
 
 # Shell integrations
 eval "$(fzf --zsh)"
