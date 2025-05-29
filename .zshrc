@@ -91,8 +91,7 @@ alias dam='git branch | grep -i -v -E "main|dev|gh-pages" | xargs git branch -d'
 alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
 alias jupyter='uv tool run \
   --with jupyterlab_execute_time \
-  --with jupyter-ai jupyter lab \
-  --with langchain-openai \
+  jupyter lab \
   --notebook-dir=/Users/srinivas/code'
 
 # Shell integrations
