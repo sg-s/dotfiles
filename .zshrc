@@ -89,10 +89,7 @@ alias gm="git checkout main && git pull"
 alias dam='git branch | grep -i -v -E "main|dev|gh-pages" | xargs git branch -d'
 # misc shortcuts
 alias ba='brew update && brew upgrade && brew doctor && brew cleanup'
-alias jupyter='uv tool run \
-  --with jupyterlab_execute_time \
-  jupyter lab \
-  --notebook-dir=/Users/srinivas/code'
+alias jupyter='uvx --from jupyter-core --with jupyterlab_execute_time jupyter lab'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -122,3 +119,8 @@ esac
 
 export PATH="/Users/srinivas/.pixi/bin:$PATH"
 eval "$(uvx --generate-shell-completion zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/srinivas/.lmstudio/bin"
+# End of LM Studio CLI section
+
