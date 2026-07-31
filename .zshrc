@@ -121,7 +121,6 @@ esac
 
 
 
-export PATH="/Users/srinivas/.pixi/bin:$PATH"
 eval "$(uvx --generate-shell-completion zsh)"
 
 # Added by LM Studio CLI (lms)
@@ -131,3 +130,13 @@ export PATH="$PATH:/Users/srinivas/.lmstudio/bin"
 
 # Added by Antigravity
 export PATH="/Users/srinivas/.antigravity/antigravity/bin:$PATH"
+
+
+# NODE_AUTH_TOKEN lives on disk, not in this repo
+if [[ -r "$HOME/.config/secrets/node_auth_token" ]]; then
+  export NODE_AUTH_TOKEN="$(<"$HOME/.config/secrets/node_auth_token")"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
